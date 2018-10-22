@@ -126,7 +126,7 @@ namespace OnlinePolygon
 
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
         {
-            if (polygon_points.Count <= 2)
+            if (polygon_points.Count <= 1)
                 polygon_points.Add(e.Location);
             else
                 add_new_point(e.Location);
