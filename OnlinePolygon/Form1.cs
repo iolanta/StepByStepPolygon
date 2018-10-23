@@ -19,7 +19,7 @@ namespace OnlinePolygon
             polygon_points = new List<PointF>();
         }
 
-        //  Считает, пересекаются ли отрезки (p1,p2) и (p3,p4). 
+        // Считает, пересекаются ли отрезки (p1,p2) и (p3,p4). Функция взята из лабораторной работы №4
         private bool FindIntersection(PointF p1, PointF p2, PointF p3, PointF p4, out PointF intersection)
         {
             float dx12 = p2.X - p1.X;
@@ -43,6 +43,7 @@ namespace OnlinePolygon
             return ((t1 >= 0) && (t1 <= 1) && (t2 >= 0) && (t2 <= 1));
         }
 
+        // Функция взята из лабораторной работы №4
         private bool point_in_polygon(PointF p)
         {
             for (int i = 0; i < polygon_points.Count; ++i)
@@ -69,12 +70,12 @@ namespace OnlinePolygon
         }
 
         // Расстояние между двумя точками
-        float distance(PointF p1, PointF p2)
+        private float distance(PointF p1, PointF p2)
         {
             return (float)Math.Sqrt((p1.X - p2.X) * (p1.X - p2.X) + (p1.Y - p2.Y) * (p1.Y - p2.Y));
         }
 
-        int orientation(PointF a, PointF b, PointF c)
+        private int orientation(PointF a, PointF b, PointF c)
         {
             float res = (b.Y - a.Y) * (c.X - b.X) - (c.Y - b.Y) * (b.X - a.X);
 
